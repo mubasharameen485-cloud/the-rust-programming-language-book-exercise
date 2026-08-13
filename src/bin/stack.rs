@@ -1,13 +1,15 @@
 fn main() {
-    // Stack variable
+    // Stack par store hone wala integer
     let x: i32 = 100;
 
-    // Heap variable
-    let y = Box::new(200);
+    
+    let y: Box<i32> = Box::new(200);
 
     println!("Stack value: {}", x);
     println!("Heap value: {}", y);
 
-    let z = *y + x;
-    println!("Sum = {}", z);
+    // *y se Heap wali value ko dereference karte hain
+    let sum = x + *y;
+
+    println!("Sum: {} + {} = {}", x, *y, sum);
 }
